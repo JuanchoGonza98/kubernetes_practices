@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nagios
+  labels:
+    name: nagios
+spec:
+  containers:
+  - name: nagios
+    image: juanchogonza98/stack_nagios_monitoring:v2
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
